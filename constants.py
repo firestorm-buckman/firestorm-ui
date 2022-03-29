@@ -1,4 +1,7 @@
+import pandas as pd
 
+desc = pd.read_csv('description_2.csv')
+desc_dict = desc.set_index('Product')['Description'].to_dict()
 # Users are put here in the format of 'username':'password'
 users = {
     'Firestorm':'Buckman123'
@@ -48,8 +51,8 @@ op_pres_dict={
 
 
 fw_dict = {
-    'All (Raw/RO/Demineralized)':1, # 1 -> All(Raw/Ro/Demin)
-    'Raw, RO Only':2 #2 -> Raw and RO only
+    'All (Raw/RO/Softened/Demin)':1, # 1 -> All(Raw/Ro/Demin)
+    'Raw/RO/Softened':2 #2 -> Raw and RO only
 }
 
 fda_dict ={
@@ -112,3 +115,13 @@ passivation_dict = {
     'Yes':1,
     'No':0
 }
+
+# desc_dict = {
+#     'Impackt BWMULT' : "Impackt BWMULT is a boiler All-in-One product with extra sulfite and Return Line Treatment. If used as a stand alone program, adjust feed rate as needed for proper sulfite and condensate pH control.",
+#     'Impackt BWINT': "Impackt BWINT is a solid concentrate blend containing polymer, phosphate and alkalinity booster, that acts as dispersant, designed to keep heat exchanger surfaces clean and free of scale and sludge. It should be use for applications containing < 20 ppm of total hardness in feedwater.",
+#     'Impackt BWO2' : "Impackt BWO2 is a solid blend containing de-characterized sodium sulfite, sodium lignosulfonate, and erythorbate, designed to reduce oxygen and general corrosion in boiler water systems. ",
+#     'Impackt BW COND1': "Impackt BW COND1 is a solid concentrate formulation of DEAE designed to minimize corrosion in condensate lines by balancing pH. Feed rate is dependent upon amount of condensate return and feedwater alkalinity. FDA (21 CFR) section 173 limits dosage to not exceed 15 ppm as active in steam and excluding use of such steam in contact with milk and milk products.",
+#     'Impackt BW COND2': "Impackt BW COND2 is a triple component neutralizing amines designed to minimize corrosion in condensate lines by balancing the pH, the addition of an oxygen corrosion inhibitor. It could elevate condensate pH to over 9.0 resulting in yellow metals corrosion so the product should be used in a control dosage.",
+#     'Impackt BW ALK': "Impackt BW ALK is a concentrated solid caustic for alkalinity and pH control, designed to act as an Alkalinity booster.",
+#     ''
+# }
